@@ -29,51 +29,63 @@ Jobbing Assistant is a powerful Streamlit-based web application designed to help
 
 You can install Jobbing Assistant using Conda, Poetry, or pip. Choose the method that best suits your workflow.
 
-### Using Conda (Recommended for Conda users)
+### Using Conda 
 
-1. Ensure you have Conda installed. If not, install Miniconda or Anaconda.
 
-2. Clone the repository:
+1. Clone the repository:
    ```
    git clone https://github.com/yourusername/jobbing-assistant.git
    cd jobbing-assistant
    ```
 
-3. Create a new Conda environment:
+2. Create a new Conda environment:
    ```
    conda create -n jobbing-assistant python=3.10
    ```
 
-4. Activate the environment:
+3. Activate the environment:
    ```
    conda activate jobbing-assistant
    ```
 
-5. Install Poetry within the Conda environment:
+4. Install Poetry within the Conda environment:
    ```
    conda install -c conda-forge poetry
    ```
 
-6. Install project dependencies:
+5. Install project dependencies:
    ```
    poetry install
    ```
 
-### Using Poetry (Recommended for non-Conda users)
-
-1. Ensure you have Python 3.10 or higher installed:
-   ```
-   python --version
-   ```
-   If not, download and install it from [python.org](https://www.python.org/downloads/).
-
-2. Clone the repository:
+### Using pip
+1. Clone the repository:
    ```
    git clone https://github.com/yourusername/jobbing-assistant.git
    cd jobbing-assistant
    ```
 
-3. Install Poetry:
+2. Create a virtual environment:
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   ```
+
+3. Install the package and its dependencies:
+   ```
+   pip install .
+   ```
+
+
+### Using Poetry
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/jobbing-assistant.git
+   cd jobbing-assistant
+   ```
+
+2. Install Poetry:
    ```
    curl -sSL https://install.python-poetry.org | python3 -
    ```
@@ -85,60 +97,16 @@ You can install Jobbing Assistant using Conda, Poetry, or pip. Choose the method
    
    You may want to add this line to your shell configuration file (e.g., `.bashrc`, `.zshrc`) for permanent effect.
 
-4. Configure Poetry to create virtual environments inside the project directory:
+3. Configure Poetry to create virtual environments inside the project directory:
    ```
    poetry config virtualenvs.in-project true
    ```
 
-5. Install project dependencies:
+4. Install project dependencies:
    ```
    poetry install
    ```
 
-### Using pip
-
-1. Ensure you have Python 3.10 or higher installed:
-   ```
-   python --version
-   ```
-   If not, download and install it from [python.org](https://www.python.org/downloads/).
-
-2. Clone the repository:
-   ```
-   git clone https://github.com/yourusername/jobbing-assistant.git
-   cd jobbing-assistant
-   ```
-
-3. Create a virtual environment:
-   ```
-   python -m venv venv
-   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-   ```
-
-4. Install the package and its dependencies:
-   ```
-   pip install .
-   ```
-
-## Development
-
-To set up the development environment:
-
-1. Ensure you've completed the installation steps above.
-
-2. Set up pre-commit hooks:
-   ```
-   pre-commit install
-   ```
-
-3. You can now use the development tools:
-   ```
-   pytest  # Run tests
-   black src tests  # Format code
-   isort src tests  # Sort imports
-   flake8 src tests  # Lint code
-   mypy src  # Type check
-   ```
 
 ## Usage
 
@@ -183,17 +151,6 @@ To set up the development environment:
 - Adjust settings in `src/jobbing-assistant/config.yaml` to modify application behavior.
 - Customize AI behavior by editing prompts in `src/jobbing-assistant/prompts.py`.
 
-## File Structure
-
-- `src/jobbing-assistant/app.py`: Main application logic and Streamlit interface.
-- `src/jobbing-assistant/config.py`: Configuration loading and management.
-- `src/jobbing-assistant/config.yaml`: Configuration settings for the application.
-- `src/jobbing-assistant/prompts.py`: AI task prompts for different functionalities.
-- `src/jobbing-assistant/extract.py`: Job posting scraping and processing functions.
-- `src/jobbing-assistant/wikipedia.py`: Wikipedia integration for company information.
-- `src/jobbing-assistant/utils.py`: Utility functions including PDF to Markdown conversion.
-- `src/jobbing-assistant/query_engine.py`: Implementations for different query engines (Plain and RAG).
-- `src/jobbing-assistant/crawler/`: Website crawling functionality.
 
 ## Advanced Features
 
@@ -262,12 +219,12 @@ To set up the development environment:
 
 4. Format code:
    ```
-   black src tests
-   isort src tests
+   black src test
+   isort src test
    ```
 
 5. Run linters:
    ```
-   flake8 src tests
+   flake8 src test
    mypy src
    ```

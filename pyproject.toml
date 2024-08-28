@@ -45,4 +45,4 @@ ignore_missing_imports = true
 strict = true
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+testpaths = ["test"]

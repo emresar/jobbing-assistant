@@ -22,14 +22,14 @@ jobs:
     - name: Install dependencies
       run: |
         poetry install
-    - name: Run tests
+    - name: Run test
       run: |
         poetry run pytest
     - name: Run linters
       run: |
-        poetry run black --check src tests
-        poetry run isort --check-only src tests
-        poetry run flake8 src tests
+        poetry run black --check src test
+        poetry run isort --check-only src test
+        poetry run flake8 src test
     - name: Type check
       run: |
         poetry run mypy src
