@@ -1,8 +1,8 @@
 import os
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any, Dict
 
-from pathlib import Path
 import yaml
 
 
