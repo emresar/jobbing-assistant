@@ -34,18 +34,18 @@ You can install Jobbing Assistant using Conda, Poetry, or pip. Choose the method
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/jobbing-assistant.git
-   cd jobbing-assistant
+   git clone https://github.com/yourusername/jobassistant.git
+   cd jobassistant
    ```
 
 2. Create a new Conda environment:
    ```
-   conda create -n jobbing-assistant python=3.10
+   conda create -n jobassistantpython=3.10
    ```
 
 3. Activate the environment:
    ```
-   conda activate jobbing-assistant
+   conda activate jobassistant
    ```
 
 4. Install Poetry within the Conda environment:
@@ -61,8 +61,8 @@ You can install Jobbing Assistant using Conda, Poetry, or pip. Choose the method
 ### Using pip
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/jobbing-assistant.git
-   cd jobbing-assistant
+   git clone https://github.com/yourusername/jobassistant.git
+   cd jobassistant
    ```
 
 2. Create a virtual environment:
@@ -81,7 +81,7 @@ You can install Jobbing Assistant using Conda, Poetry, or pip. Choose the method
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/jobbing-assistant.git
+   git clone https://github.com/emresar/jobbing-assistant.git
    cd jobbing-assistant
    ```
 
@@ -114,14 +114,14 @@ You can install Jobbing Assistant using Conda, Poetry, or pip. Choose the method
 
 1. Activate the environment:
    ```
-   conda activate jobbing-assistant  # If using Conda
+   conda activate jobassistant # If using Conda
    # or
    poetry shell  # If using Poetry
    ```
 
 2. Start the Streamlit app:
    ```
-   streamlit run src/jobbing_assistant/app.py
+   streamlit run src/jobassistant/app.py
    ```
 
 ### If installed with pip:
@@ -133,7 +133,7 @@ You can install Jobbing Assistant using Conda, Poetry, or pip. Choose the method
 
 2. Start the Streamlit app:
    ```
-   streamlit run src/jobbing_assistant/app.py
+   streamlit run src/jobassistant/app.py
    ```
 
 3. Access the web interface (typically at `http://localhost:8501`).
@@ -148,8 +148,8 @@ You can install Jobbing Assistant using Conda, Poetry, or pip. Choose the method
 
 ## Configuration
 
-- Adjust settings in `src/jobbing-assistant/config.yaml` to modify application behavior.
-- Customize AI behavior by editing prompts in `src/jobbing-assistant/prompts.py`.
+- Adjust settings in `src/jobassistant/config.yaml` to modify application behavior.
+- Customize AI behavior by editing prompts in `src/jobassistant/prompts.py`.
 
 
 ## Advanced Features

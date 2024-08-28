@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "Jobbing Assistant"
+name = "jobassistant"
 version = "0.1.0"
 description = "A job application assistant that helps with CV evaluation, cover letter generation, and CV editing suggestions."
 authors = ["emre.sar <emresarigol@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "jobbing-assistant", from = "src"}]
+packages = [{include = "jobassistant", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"

@@ -1,4 +1,4 @@
-./src/jobbing-assistant/crawler/crawler/storage/
+./src/jobassistant/crawler/crawler/storage/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
