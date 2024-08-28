@@ -228,3 +228,19 @@ To set up the development environment:
    flake8 src test
    mypy src
    ```
+
+
+## Screenshots
+
+Here are some screenshots of the Jobbing Assistant in action:
+
+![Full Application](./screenshots/full.png)
+
+![CV Upload](./screenshots/cv-upload.png)
+
+![UseRag](./screenshots/userag.png)
+
+![Processing](./screenshots/processing.png)
+
+
+

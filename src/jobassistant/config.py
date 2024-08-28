@@ -2,6 +2,7 @@ import os
 from dataclasses import dataclass
 from typing import Any, Dict
 
+from pathlib import Path
 import yaml
 
 
@@ -17,7 +18,7 @@ class Config:
 
 
 def load_config() -> Config:
-    config_file = os.environ.get("CONFIG_FILE", "config.yaml")
+    config_file = os.environ.get("CONFIG_FILE", str(Path(__file__).parent / "config.yaml"))
     with open(config_file, "r") as f:
         config_dict = yaml.safe_load(f)
     return Config(**config_dict)
