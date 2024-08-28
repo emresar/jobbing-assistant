@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "jobbing-assistant"
+name = "Jobbing Assistant"
 version = "0.1.0"
 description = "A job application assistant that helps with CV evaluation, cover letter generation, and CV editing suggestions."
 authors = ["emre.sar <emresarigol@gmail.com>"]
