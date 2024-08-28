@@ -16,7 +16,6 @@ from llama_index.llms.ollama import Ollama
 
 
 class QueryEngine(ABC):
-
     def __init__(self, config):
         self.config = config
 

@@ -19,31 +19,158 @@ Jobbing Assistant is a powerful Streamlit-based web application designed to help
 - **Additional Context**: Provide extra information to guide AI responses.
 - **Cache Management**: Clear cache to refresh data and models.
 
+## Requirements
+
+- Python 3.10 or higher
+- Conda, Poetry, or pip
+- Ollama for local AI model integration
+
 ## Installation
 
-1. Clone the repository:
+You can install Jobbing Assistant using Conda, Poetry, or pip. Choose the method that best suits your workflow.
+
+### Using Conda (Recommended for Conda users)
+
+1. Ensure you have Conda installed. If not, install Miniconda or Anaconda.
+
+2. Clone the repository:
    ```
    git clone https://github.com/yourusername/jobbing-assistant.git
    cd jobbing-assistant
    ```
 
-2. Install required dependencies:
+3. Create a new Conda environment:
    ```
-   pip install -r requirements.txt
+   conda create -n jobbing-assistant python=3.10
    ```
 
-3. Ensure Ollama is installed and running on your local machine.
+4. Activate the environment:
+   ```
+   conda activate jobbing-assistant
+   ```
+
+5. Install Poetry within the Conda environment:
+   ```
+   conda install -c conda-forge poetry
+   ```
+
+6. Install project dependencies:
+   ```
+   poetry install
+   ```
+
+### Using Poetry (Recommended for non-Conda users)
+
+1. Ensure you have Python 3.10 or higher installed:
+   ```
+   python --version
+   ```
+   If not, download and install it from [python.org](https://www.python.org/downloads/).
+
+2. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/jobbing-assistant.git
+   cd jobbing-assistant
+   ```
+
+3. Install Poetry:
+   ```
+   curl -sSL https://install.python-poetry.org | python3 -
+   ```
+   
+   After installation, make sure Poetry is in your PATH:
+   ```
+   export PATH="$HOME/.local/bin:$PATH"
+   ```
+   
+   You may want to add this line to your shell configuration file (e.g., `.bashrc`, `.zshrc`) for permanent effect.
+
+4. Configure Poetry to create virtual environments inside the project directory:
+   ```
+   poetry config virtualenvs.in-project true
+   ```
+
+5. Install project dependencies:
+   ```
+   poetry install
+   ```
+
+### Using pip
+
+1. Ensure you have Python 3.10 or higher installed:
+   ```
+   python --version
+   ```
+   If not, download and install it from [python.org](https://www.python.org/downloads/).
+
+2. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/jobbing-assistant.git
+   cd jobbing-assistant
+   ```
+
+3. Create a virtual environment:
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   ```
+
+4. Install the package and its dependencies:
+   ```
+   pip install .
+   ```
+
+## Development
+
+To set up the development environment:
+
+1. Ensure you've completed the installation steps above.
+
+2. Set up pre-commit hooks:
+   ```
+   pre-commit install
+   ```
+
+3. You can now use the development tools:
+   ```
+   pytest  # Run tests
+   black src tests  # Format code
+   isort src tests  # Sort imports
+   flake8 src tests  # Lint code
+   mypy src  # Type check
+   ```
 
 ## Usage
 
-1. Start the Streamlit app:
+### If installed with Conda or Poetry:
+
+1. Activate the environment:
    ```
-   streamlit run app.py
+   conda activate jobbing-assistant  # If using Conda
+   # or
+   poetry shell  # If using Poetry
    ```
 
-2. Access the web interface (typically at `http://localhost:8501`).
+2. Start the Streamlit app:
+   ```
+   streamlit run src/jobbing_assistant/app.py
+   ```
 
-3. Use the application:
+### If installed with pip:
+
+1. Activate the virtual environment:
+   ```
+   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   ```
+
+2. Start the Streamlit app:
+   ```
+   streamlit run src/jobbing_assistant/app.py
+   ```
+
+3. Access the web interface (typically at `http://localhost:8501`).
+
+4. Use the application:
    - Select an AI model from the available options.
    - Upload your CV (PDF, Markdown, or plain text).
    - Choose between entering a Job ID or URL to crawl.
@@ -53,19 +180,20 @@ Jobbing Assistant is a powerful Streamlit-based web application designed to help
 
 ## Configuration
 
-- Adjust settings in `config.py` to modify application behavior.
-- Customize AI behavior by editing prompts in `prompts.py`.
+- Adjust settings in `src/jobbing-assistant/config.yaml` to modify application behavior.
+- Customize AI behavior by editing prompts in `src/jobbing-assistant/prompts.py`.
 
 ## File Structure
 
-- `app.py`: Main application logic and Streamlit interface.
-- `config.py`: Configuration settings for the application.
-- `prompts.py`: AI task prompts for different functionalities.
-- `extract.py`: Job posting scraping and processing functions.
-- `wikipedia.py`: Wikipedia integration for company information.
-- `utils.py`: Utility functions including PDF to Markdown conversion.
-- `query_engine.py`: Implementations for different query engines (Plain and RAG).
-- `crawler/`: Website crawling functionality.
+- `src/jobbing-assistant/app.py`: Main application logic and Streamlit interface.
+- `src/jobbing-assistant/config.py`: Configuration loading and management.
+- `src/jobbing-assistant/config.yaml`: Configuration settings for the application.
+- `src/jobbing-assistant/prompts.py`: AI task prompts for different functionalities.
+- `src/jobbing-assistant/extract.py`: Job posting scraping and processing functions.
+- `src/jobbing-assistant/wikipedia.py`: Wikipedia integration for company information.
+- `src/jobbing-assistant/utils.py`: Utility functions including PDF to Markdown conversion.
+- `src/jobbing-assistant/query_engine.py`: Implementations for different query engines (Plain and RAG).
+- `src/jobbing-assistant/crawler/`: Website crawling functionality.
 
 ## Advanced Features
 
@@ -96,3 +224,50 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - [LlamaIndex](https://www.llamaindex.ai/) for advanced indexing and retrieval.
 - [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/) for web scraping capabilities.
 - [Wikipedia](https://www.wikipedia.org/) for company information.
+
+## Development
+
+To set up the development environment:
+
+### With Poetry:
+
+1. Install development dependencies:
+   ```
+   poetry install --with dev
+   ```
+
+2. Set up pre-commit hooks:
+   ```
+   poetry run pre-commit install
+   ```
+
+### With pip:
+
+1. Ensure you've installed the development dependencies:
+   ```
+   pip install ".[dev]"
+   ```
+
+2. Set up pre-commit hooks:
+   ```
+   pre-commit install
+   ```
+
+### Common development tasks:
+
+3. Run tests:
+   ```
+   pytest
+   ```
+
+4. Format code:
+   ```
+   black src tests
+   isort src tests
+   ```
+
+5. Run linters:
+   ```
+   flake8 src tests
+   mypy src
+   ```
