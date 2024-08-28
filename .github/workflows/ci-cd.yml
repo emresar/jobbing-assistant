@@ -31,8 +31,6 @@ jobs:
         cat pyproject.toml
         echo "Attempting poetry install:"
         poetry install --no-interaction --verbose || { echo "Poetry install failed"; cat $HOME/.cache/pypoetry/log/debug.log; exit 1; }
-      env:
-        POETRY_VIRTUALENVS_CREATE: false
     - name: Run test
       run: |
         poetry run pytest
