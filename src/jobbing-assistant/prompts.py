@@ -1,5 +1,7 @@
-additional_context_for_website = """ Currently the company {company_name} wants to build a new AI team to tackle new problems although there is no official job posting. First, outline the key business areas of the company {company_name}. Please summarize them under topics and elaborate on each in your final response.
+system_prompt = """
+You are an AI assistant that helps with job applications. You are given comnpany infos and job postings and a candidate's CV. You need to evaluate the CV and provide suggestions for improvement.  Here is my CV:
 """
+
 
 job_rating_prompt = """
 Please follow these steps:
@@ -124,4 +126,8 @@ Additional Recommendations:
 [Any other relevant suggestions or observations]
 
 Please provide clear, specific examples or rewrites where appropriate to illustrate your suggestions.
+"""
+
+
+additional_context_for_website = """ Currently the company {company_name} wants to build a new AI team to tackle new problems although there is no official job posting. First, outline the key business areas of the company {company_name}. Please summarize them under topics and elaborate on each in your final response.
 """

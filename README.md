@@ -12,6 +12,12 @@ Jobbing Assistant is a powerful Streamlit-based web application designed to help
 - **Job Posting Extraction**: Automatically extract and parse job details from LinkedIn URLs.
 - **Company Information**: Integrate relevant company information from Wikipedia.
 - **Export Functionality**: Save results as Markdown files for future reference.
+- **CV Upload**: Support for uploading CVs in PDF, Markdown, or plain text formats.
+- **Website Crawling**: Ability to crawl and analyze job postings from provided URLs.
+- **Document Upload for RAG**: Upload various document types to enhance RAG capabilities.
+- **Flexible Input**: Choose between entering a Job ID or a URL to crawl for job details.
+- **Additional Context**: Provide extra information to guide AI responses.
+- **Cache Management**: Clear cache to refresh data and models.
 
 ## Installation
 
@@ -28,8 +34,6 @@ Jobbing Assistant is a powerful Streamlit-based web application designed to help
 
 3. Ensure Ollama is installed and running on your local machine.
 
-4. Place your CV in Markdown format as `cv.md` in the root directory.
-
 ## Usage
 
 1. Start the Streamlit app:
@@ -41,23 +45,27 @@ Jobbing Assistant is a powerful Streamlit-based web application designed to help
 
 3. Use the application:
    - Select an AI model from the available options.
-   - Enter a LinkedIn Job ID.
+   - Upload your CV (PDF, Markdown, or plain text).
+   - Choose between entering a Job ID or URL to crawl.
+   - (Optional) Enable RAG and upload relevant documents.
    - (Optional) Provide additional context.
-   - Choose between CV rating, cover letter generation, or CV edit suggestions.
-   - Enable RAG and upload relevant documents if desired.
+   - Select desired action: CV rating, cover letter generation, or CV edit suggestions.
 
 ## Configuration
 
-- Adjust `NUM_PREDICT_LEN` and `NUM_CTX` in `app.py` to modify token prediction and context window size.
+- Adjust settings in `config.py` to modify application behavior.
 - Customize AI behavior by editing prompts in `prompts.py`.
 
 ## File Structure
 
 - `app.py`: Main application logic and Streamlit interface.
+- `config.py`: Configuration settings for the application.
 - `prompts.py`: AI task prompts for different functionalities.
 - `extract.py`: Job posting scraping and processing functions.
 - `wikipedia.py`: Wikipedia integration for company information.
-- `cv.md`: User's CV in Markdown format (to be added by the user).
+- `utils.py`: Utility functions including PDF to Markdown conversion.
+- `query_engine.py`: Implementations for different query engines (Plain and RAG).
+- `crawler/`: Website crawling functionality.
 
 ## Advanced Features
 
@@ -65,12 +73,13 @@ Jobbing Assistant is a powerful Streamlit-based web application designed to help
 
 Enable RAG to incorporate information from uploaded documents into AI responses, providing more context-aware suggestions.
 
-### Command-line Arguments
+### Website Crawling
 
-Customize the application behavior using command-line arguments:
-```
-python app.py --model llama3.1:latest --num_predict 12000 --num_ctx 116000
-```
+Enter a URL to automatically crawl and analyze job postings from specific websites.
+
+### Document Upload for RAG
+
+Upload various document types (PDF, Word, Excel, PowerPoint, etc.) to enhance the RAG system's knowledge base.
 
 ## Contributing
 

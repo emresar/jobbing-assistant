@@ -1,0 +1,12 @@
+# API Configuration
+endpoint_url: "http://localhost:11434/api/chat"
+tags_url: "http://localhost:11434/api/tags"
+
+# Directory Configuration
+docs_dir: "./docs"
+
+# Model Configuration
+num_predict: 12000
+num_ctx: 116000
+model: "llama3.1:latest"
+temperature: 0.1
