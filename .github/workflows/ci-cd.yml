@@ -21,9 +21,16 @@ jobs:
         echo "$HOME/.local/bin" >> $GITHUB_PATH
     - name: Install dependencies
       run: |
+        echo "Python version:"
+        python --version
+        echo "Poetry version:"
         poetry --version
+        echo "Poetry configuration:"
         poetry config --list
-        poetry install --no-interaction --verbose
+        echo "Contents of pyproject.toml:"
+        cat pyproject.toml
+        echo "Attempting poetry install:"
+        poetry install --no-interaction --verbose || { echo "Poetry install failed"; cat $HOME/.cache/pypoetry/log/debug.log; exit 1; }
       env:
         POETRY_VIRTUALENVS_CREATE: false
     - name: Run test
