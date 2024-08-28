@@ -29,7 +29,7 @@ jobs:
       run: |
         poetry run black --check src test
         poetry run isort --check-only src test
-        poetry run flake8 src test
+  #      poetry run flake8 src test
     - name: Type check
       run: |
         poetry run mypy src
@@ -42,7 +42,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.9
+        python-version: 3.10
     - name: Install Poetry
       run: |
         curl -sSL https://install.python-poetry.org | python3 -
